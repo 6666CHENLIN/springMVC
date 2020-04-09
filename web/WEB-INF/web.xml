@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+
+<servlet>
+    <servlet-name>servlet1</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+    <init-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:springmvc.xml</param-value>
+    </init-param>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>servlet1</servlet-name>
+        <!-- 针对客户端的请求处理
+        /*  将根据客户端请求，直接与@RequestMappering映射地址进行匹配
+        /  将根据后缀名直接匹配静态资源，默认无后缀则匹配映射地址
+        *.xx 根据后缀名直接用于区分映射请求和静态资源的请求
+        -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
